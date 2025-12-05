@@ -1,0 +1,1305 @@
+@use 'sass:color';
+
+/**
+ * @description Ext JS 风格紧凑界面主题
+ * @author AI Assistant
+ * Ext JS 特点：紧凑布局、清晰边框、专业商务风格、高信息密度
+ */
+
+html > body.vab-theme-extjs {
+  // Ext JS 经典配色方案
+  --el-color-extjs-base: #157fcc;
+  --el-color-extjs-header: #1e5799;
+  --el-color-extjs-panel: #d0def0;
+  --el-color-extjs-border: #99bbe8;
+  --el-color-extjs-toolbar: #d0def0;
+  --el-color-extjs-grid-header: #d0def0;
+  --el-color-extjs-hover: #dfe8f6;
+  --el-color-extjs-selected: #dfe8f6;
+  --el-color-extjs-text: #15428b;
+  --el-color-extjs-text-dark: #222222;
+
+  // 基础背景色
+  --el-dialog-bg-color: #f5f5f5;
+  --el-color-black: #222222;
+  --el-color-white: #f5f5f5;
+  --el-color-grey: #222222;
+  --el-menu-background-color: #d0def0;
+  --el-menu-background-color-second: #d0def0;
+  --el-menu-text-color: var(--el-color-extjs-text);
+  --el-bg-color-page: #f5f5f5;
+  --el-bg-color: #ffffff;
+  --el-bg-color-overlay: #ffffff;
+  --el-text-color-primary: #222222;
+  --el-text-color-regular: #222222;
+  --el-text-color-secondary: #555555;
+  --el-text-color-placeholder: #999999;
+  --el-text-color-disabled: #cccccc;
+
+  // Ext JS 特色边框 - 更明显的边框
+  --el-border-color-darker: #99bbe8;
+  --el-border-color-dark: #99bbe8;
+  --el-border-color: #99bbe8;
+  --el-border: 1px solid #99bbe8;
+  --el-border-color-light: #b8d0e8;
+  --el-border-color-lighter: #d0def0;
+  --el-border-color-extra-light: #e0e9f5;
+
+  // 填充色
+  --el-fill-color-darker: #d0def0;
+  --el-fill-color-dark: #d0def0;
+  --el-fill-color: #e8f0f8;
+  --el-fill-color-light: #f0f5fa;
+  --el-fill-color-lighter: #f5f8fc;
+  --el-fill-color-extra-light: #fafcfe;
+  --el-fill-color-blank: #ffffff;
+  --el-mask-color: rgba(0, 0, 0, 0.5);
+
+  // 编辑器配色
+  --w-e-textarea-bg-color: #ffffff;
+  --w-e-textarea-color: #222222;
+  --w-e-textarea-border-color: #99bbe8;
+  --w-e-textarea-slight-border-color: #b8d0e8;
+  --w-e-textarea-slight-color: #555555;
+  --w-e-textarea-slight-bg-color: #f5f5f5;
+  --w-e-textarea-selected-border-color: #157fcc;
+  --w-e-textarea-handler-bg-color: #157fcc;
+  --w-e-toolbar-color: #222222;
+  --w-e-toolbar-bg-color: #d0def0;
+  --w-e-toolbar-active-color: #157fcc;
+  --w-e-toolbar-active-bg-color: #dfe8f6;
+  --w-e-toolbar-disabled-color: #cccccc;
+  --w-e-toolbar-border-color: #99bbe8;
+  --w-e-modal-button-bg-color: #d0def0;
+  --w-e-modal-button-border-color: #99bbe8;
+
+  color: var(--el-color-grey) !important;
+  background-color: var(--el-color-white) !important;
+
+  // 紧凑间距 - Ext JS 特色
+  --el-padding: 8px;
+  --el-margin: 8px;
+
+  // 字体设置 - 更紧凑
+  font-size: 12px;
+  --el-font-size-base: 12px;
+  --el-font-size-small: 11px;
+  --el-font-size-extra-small: 10px;
+
+  .card {
+    &:hover {
+      background-color: var(--el-color-extjs-hover);
+    }
+  }
+
+  // 侧边栏样式 - Ext JS 面板风格
+  .vab-side-bar {
+    background: var(--el-menu-background-color) !important;
+    border-right: 1px solid var(--el-border-color) !important;
+    box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 #99bbe8;
+  }
+
+  .mobile {
+    .vab-side-bar {
+      border-left: 0 solid var(--el-border-color) !important;
+    }
+  }
+
+  // 导航栏 - Ext JS 工具栏风格
+  .vab-nav {
+    background: var(--el-color-extjs-toolbar) !important;
+    border-bottom: 1px solid var(--el-border-color) !important;
+    box-shadow: inset 0 1px 0 #ffffff;
+  }
+
+  section > div[class*='-container'],
+  .no-background-container {
+    background: var(--el-color-white) !important;
+    border: 1px solid var(--el-border-color) !important;
+  }
+
+  // 分栏布局
+  .vab-column-bar {
+    background: var(--el-menu-background-color) !important;
+    border-right: 1px solid var(--el-border-color) !important;
+
+    .el-tabs {
+      margin-left: -1px !important;
+      border-right: 1px solid var(--el-border-color) !important;
+
+      .el-tabs__item {
+        color: var(--el-menu-text-color) !important;
+        background: var(--el-menu-background-color) !important;
+        border: 1px solid var(--el-border-color) !important;
+        padding: 6px 12px !important;
+
+        &:hover {
+          background: var(--el-color-extjs-hover) !important;
+        }
+
+        &.is-active {
+          background: #ffffff !important;
+          color: var(--el-color-extjs-text) !important;
+          font-weight: bold;
+        }
+      }
+
+      .el-tabs__nav {
+        background: var(--el-menu-background-color) !important;
+      }
+    }
+
+    &-arrow {
+      .el-tabs {
+        .el-tabs__item {
+          &.is-active {
+            color: var(--el-menu-text-color) !important;
+            background: #ffffff !important;
+
+            .vab-column-grid {
+              background: transparent !important;
+
+              &:after {
+                border-color: transparent var(--el-border-color) transparent transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 标签页 - Ext JS Tab 风格（优化版）
+  .vab-tabs,
+  .vab-tabs-content-card,
+  .vab-tabs-content-smart,
+  .vab-tabs-content-smooth {
+    .el-tabs__header {
+      background: #d0def0 !important;
+      border-bottom: 1px solid #99bbe8 !important;
+      padding: 2px 4px 0 4px !important;
+      margin: 0 !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+      .el-tabs__nav-wrap {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .el-tabs__nav-scroll {
+        padding: 0 !important;
+      }
+
+      .el-tabs__nav {
+        border: none !important;
+      }
+
+      .el-tabs__item {
+        border: 1px solid #99bbe8 !important;
+        border-bottom: none !important;
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border-radius: 3px 3px 0 0 !important;
+        padding: 4px 12px !important;
+        margin: 0 2px 0 0 !important;
+        font-size: 12px !important;
+        height: 28px !important;
+        line-height: 20px !important;
+        color: #15428b !important;
+        transition: all 0.15s ease !important;
+
+        &:hover {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          color: #157fcc !important;
+        }
+
+        &.is-active {
+          background: #ffffff !important;
+          color: #157fcc !important;
+          font-weight: bold !important;
+          border-bottom: 1px solid #ffffff !important;
+          margin-bottom: -1px !important;
+          box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .el-icon-close {
+          font-size: 12px !important;
+          margin-left: 4px !important;
+        }
+      }
+    }
+  }
+
+  // 标签页容器紧凑间距
+  .vab-layout-column,
+  .vab-layout-vertical,
+  .vab-layout-horizontal {
+    .vab-tabs {
+      margin: 0 !important;
+      padding: 0 !important;
+      min-height: auto !important;
+
+      .vab-tabs-draggable {
+        width: 100% !important;
+      }
+
+      .el-tabs {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+  }
+
+  // 固定标签页样式
+  .fixed-header {
+    .vab-tabs {
+      margin: 0 !important;
+      padding: 0 !important;
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      min-height: auto !important;
+      border-bottom: 1px solid #99bbe8 !important;
+
+      .vab-tabs-draggable {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .vab-logo-column {
+    .logo {
+      background: var(--el-menu-background-color) !important;
+      border-right: 1px solid var(--el-border-color) !important;
+      box-shadow: inset 0 1px 0 #ffffff;
+    }
+  }
+
+  // Dialog 和 MessageBox - Ext JS Window 风格（优化版）
+  .el-dialog,
+  .el-message-box {
+    position: relative;
+    overflow: visible;
+    background: #f5f5f5;
+    border: 1px solid #99bbe8;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    &__header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to bottom, #d0def0 0%, #b8d0e8 100%) !important;
+      border-bottom: 1px solid #99bbe8;
+      padding: 10px 15px !important;
+      min-height: 40px !important;
+      height: auto !important;
+      line-height: 1.5 !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+      .el-dialog__title,
+      .el-message-box__title {
+        color: #15428b;
+        font-weight: bold;
+        font-size: 13px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        line-height: 1.5;
+      }
+
+      .el-dialog__headerbtn,
+      .el-message-box__headerbtn {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        transition: all 0.15s ease;
+
+        &:hover {
+          background: rgba(255, 0, 0, 0.1);
+          border-color: rgba(255, 0, 0, 0.2);
+        }
+      }
+
+      .el-dialog__close,
+      .el-message-box__close {
+        color: #15428b;
+        font-size: 16px;
+        transition: all 0.15s ease;
+
+        &:hover {
+          color: #ff0000;
+        }
+      }
+
+      i[class*='__close'] {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__body {
+      padding: 15px !important;
+      background: #ffffff;
+      font-size: 12px;
+      color: #222222;
+      line-height: 1.6;
+    }
+
+    &__footer {
+      padding: 10px 15px !important;
+      background: #f5f5f5;
+      border-top: 1px solid #99bbe8;
+      text-align: right;
+
+      .el-button {
+        margin-left: 8px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  // Drawer
+  .el-drawer.rtl {
+    border-left: 1px solid var(--el-border-color);
+  }
+
+  .el-drawer__header {
+    color: var(--el-color-grey);
+    background: var(--el-color-extjs-toolbar);
+    border-bottom: 1px solid var(--el-border-color);
+    padding: 8px 12px !important;
+  }
+
+  // 按钮 - Ext JS 按钮风格（优化版）
+  .el-button {
+    border: 1px solid #99bbe8 !important;
+    background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+    color: #15428b !important;
+    padding: 5px 12px !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.15s ease !important;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+      border-color: #157fcc !important;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 3px rgba(21, 127, 204, 0.2) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: linear-gradient(to bottom, #d0def0 0%, #b8d0e8 100%) !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset !important;
+    }
+
+    &:disabled {
+      opacity: 0.6 !important;
+      cursor: not-allowed !important;
+    }
+
+    &--primary {
+      background: linear-gradient(to bottom, #5fa3e0 0%, #157fcc 100%) !important;
+      border-color: #1565a8 !important;
+      color: #ffffff !important;
+      font-weight: 500 !important;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(to bottom, #6fb0e8 0%, #2589d4 100%) !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 2px 4px rgba(21, 127, 204, 0.3) !important;
+      }
+
+      &:active:not(:disabled) {
+        background: linear-gradient(to bottom, #157fcc 0%, #1565a8 100%) !important;
+      }
+    }
+
+    &--success {
+      background: linear-gradient(to bottom, #67c23a 0%, #5daf34 100%) !important;
+      border-color: #529b2e !important;
+      color: #ffffff !important;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(to bottom, #85ce61 0%, #67c23a 100%) !important;
+      }
+    }
+
+    &--warning {
+      background: linear-gradient(to bottom, #e6a23c 0%, #cf9236 100%) !important;
+      border-color: #b88230 !important;
+      color: #ffffff !important;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(to bottom, #ebb563 0%, #e6a23c 100%) !important;
+      }
+    }
+
+    &--danger {
+      background: linear-gradient(to bottom, #f56c6c 0%, #f25656 100%) !important;
+      border-color: #dd4a4a !important;
+      color: #ffffff !important;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(to bottom, #f78989 0%, #f56c6c 100%) !important;
+      }
+    }
+
+    &--info {
+      background: linear-gradient(to bottom, #909399 0%, #82848a 100%) !important;
+      border-color: #73767a !important;
+      color: #ffffff !important;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(to bottom, #a6a9ad 0%, #909399 100%) !important;
+      }
+    }
+
+    &--text {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 5px 8px !important;
+
+      &:hover:not(:disabled) {
+        background: rgba(21, 127, 204, 0.1) !important;
+      }
+    }
+
+    // 按钮组
+    &-group {
+      .el-button {
+        &:not(:first-child) {
+          margin-left: -1px !important;
+        }
+
+        &:first-child {
+          border-top-right-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
+        }
+
+        &:last-child {
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+
+        &:not(:first-child):not(:last-child) {
+          border-radius: 0 !important;
+        }
+      }
+    }
+  }
+
+  // 输入框 - Ext JS 输入框风格（优化版）
+  .el-input {
+    font-size: 12px !important;
+
+    &__wrapper {
+      background: #ffffff !important;
+      border: 1px solid #99bbe8 !important;
+      border-radius: 3px !important;
+      padding: 3px 8px !important;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
+      transition: all 0.2s ease !important;
+
+      &:hover:not(.is-disabled) {
+        border-color: #157fcc !important;
+      }
+
+      &.is-focus {
+        border-color: #157fcc !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 4px rgba(21, 127, 204, 0.25) !important;
+        outline: none !important;
+      }
+    }
+
+    &__inner {
+      font-size: 12px !important;
+      color: #222222 !important;
+      line-height: 20px !important;
+
+      &::placeholder {
+        color: #999999 !important;
+      }
+    }
+
+    &.is-disabled {
+      .el-input__wrapper {
+        background: #f5f5f5 !important;
+        border-color: #d0d0d0 !important;
+        cursor: not-allowed !important;
+      }
+
+      .el-input__inner {
+        color: #cccccc !important;
+        cursor: not-allowed !important;
+      }
+    }
+
+    // 输入框尺寸
+    &--small {
+      .el-input__wrapper {
+        padding: 2px 6px !important;
+      }
+
+      .el-input__inner {
+        font-size: 11px !important;
+        line-height: 18px !important;
+      }
+    }
+
+    &--large {
+      .el-input__wrapper {
+        padding: 4px 10px !important;
+      }
+
+      .el-input__inner {
+        font-size: 13px !important;
+        line-height: 22px !important;
+      }
+    }
+  }
+
+  // 文本域
+  .el-textarea {
+    font-size: 12px !important;
+
+    &__inner {
+      background: #ffffff !important;
+      border: 1px solid #99bbe8 !important;
+      border-radius: 3px !important;
+      padding: 6px 8px !important;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+      transition: all 0.2s ease !important;
+
+      &:hover:not(:disabled) {
+        border-color: #157fcc !important;
+      }
+
+      &:focus {
+        border-color: #157fcc !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 4px rgba(21, 127, 204, 0.25) !important;
+        outline: none !important;
+      }
+
+      &:disabled {
+        background: #f5f5f5 !important;
+        border-color: #d0d0d0 !important;
+        color: #cccccc !important;
+        cursor: not-allowed !important;
+      }
+    }
+  }
+
+  // 表格 - Ext JS Grid 风格（优化版）
+  .el-table {
+    border: 1px solid #99bbe8 !important;
+    font-size: 12px !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+
+    &__header {
+      background: linear-gradient(to bottom, #d0def0 0%, #b8d0e8 100%) !important;
+
+      th {
+        background: transparent !important;
+        border-right: 1px solid #99bbe8 !important;
+        border-bottom: 2px solid #99bbe8 !important;
+        color: #15428b !important;
+        font-weight: bold !important;
+        padding: 8px 10px !important;
+        font-size: 12px !important;
+        text-align: left !important;
+
+        &:last-child {
+          border-right: none !important;
+        }
+
+        .cell {
+          font-weight: bold !important;
+        }
+      }
+    }
+
+    &__body {
+      tr {
+        transition: background-color 0.15s ease !important;
+
+        &:hover > td {
+          background: #dfe8f6 !important;
+        }
+
+        td {
+          border-right: 1px solid #e8f0f8 !important;
+          border-bottom: 1px solid #e8f0f8 !important;
+          padding: 6px 10px !important;
+          font-size: 12px !important;
+          color: #222222 !important;
+
+          &:last-child {
+            border-right: none !important;
+          }
+        }
+      }
+
+      .el-table__row--striped {
+        background: #f8fbfe !important;
+
+        &:hover > td {
+          background: #dfe8f6 !important;
+        }
+      }
+    }
+
+    &__empty-block {
+      background: #ffffff !important;
+    }
+
+    // 表格固定列阴影
+    &__fixed,
+    &__fixed-right {
+      &::before {
+        background-color: rgba(0, 0, 0, 0.08) !important;
+      }
+    }
+
+    // 表格排序图标
+    .caret-wrapper {
+      .sort-caret {
+        border-color: #99bbe8 transparent transparent !important;
+
+        &.ascending {
+          border-bottom-color: #157fcc !important;
+        }
+
+        &.descending {
+          border-top-color: #157fcc !important;
+        }
+      }
+    }
+  }
+
+  // 分页 - 紧凑风格（优化版）
+  .el-pagination {
+    font-size: 12px !important;
+
+    &.is-background {
+      .btn-prev,
+      .btn-next,
+      .el-pager li {
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        min-width: 28px !important;
+        height: 28px !important;
+        line-height: 26px !important;
+        font-size: 12px !important;
+        margin: 0 2px !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        transition: all 0.15s ease !important;
+
+        &:hover:not(:disabled):not(.is-active) {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          border-color: #157fcc !important;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 3px rgba(21, 127, 204, 0.2) !important;
+        }
+
+        &.is-active {
+          background: linear-gradient(to bottom, #5fa3e0 0%, #157fcc 100%) !important;
+          border-color: #1565a8 !important;
+          color: #ffffff !important;
+          font-weight: bold !important;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+        }
+      }
+
+      .btn-prev:disabled,
+      .btn-next:disabled {
+        background: #f5f5f5 !important;
+        border-color: #d0d0d0 !important;
+        color: #cccccc !important;
+        cursor: not-allowed !important;
+        box-shadow: none !important;
+      }
+    }
+
+    // 分页器其他元素
+    .el-pagination__total,
+    .el-pagination__jump {
+      font-size: 12px !important;
+      color: #555555 !important;
+    }
+
+    .el-select {
+      .el-input__wrapper {
+        height: 28px !important;
+      }
+    }
+  }
+
+  // 单选框和复选框
+  .el-radio-button {
+    &__inner {
+      border: 1px solid var(--el-border-color) !important;
+      background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+      padding: 6px 12px !important;
+      font-size: 12px !important;
+
+      &:hover {
+        background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+      }
+    }
+
+    &.is-active {
+      .el-radio-button__inner {
+        background: linear-gradient(to bottom, #5fa3e0 0%, #157fcc 100%) !important;
+        border-color: #1565a8 !important;
+      }
+    }
+  }
+
+  // 头部
+  .vab-header {
+    background: var(--el-color-extjs-toolbar) !important;
+    border-bottom: 1px solid var(--el-border-color) !important;
+    box-shadow: inset 0 1px 0 #ffffff;
+
+    .vab-logo-horizontal {
+      height: calc(var(--el-header-height) - 2px);
+    }
+
+    .vab-main {
+      .right-panel {
+        [class*='ri-'],
+        .username {
+          color: var(--el-color-extjs-text) !important;
+        }
+      }
+    }
+  }
+
+  // 标签页平滑风格
+  .vab-tabs-content-smooth {
+    .el-tabs__header {
+      background: var(--el-color-extjs-toolbar) !important;
+
+      .el-tabs__item {
+        padding: 6px 16px !important;
+
+        &:hover {
+          color: var(--el-color-extjs-text);
+          background: var(--el-color-extjs-hover);
+        }
+
+        &.is-active {
+          background: #ffffff !important;
+          color: var(--el-color-extjs-text) !important;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // 消息提示
+  [class*='vab-hey-message'] {
+    border: 1px solid var(--el-border-color) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  // 卡片 - Ext JS Panel 风格（优化版）
+  .el-card {
+    border: 1px solid #99bbe8 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+    transition: box-shadow 0.2s ease !important;
+
+    &:hover {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    &__header {
+      background: linear-gradient(to bottom, #d0def0 0%, #b8d0e8 100%) !important;
+      border-bottom: 1px solid #99bbe8 !important;
+      padding: 10px 15px !important;
+      color: #15428b !important;
+      font-weight: bold !important;
+      font-size: 13px !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    &__body {
+      padding: 15px !important;
+      background: #ffffff !important;
+      font-size: 12px;
+    }
+  }
+
+  // 菜单 - Ext JS 菜单风格（优化版）
+  .el-menu {
+    background: #d0def0 !important;
+    border-right: 1px solid #99bbe8 !important;
+    font-size: 12px !important;
+
+    &-item,
+    .el-sub-menu__title {
+      color: #15428b !important;
+      padding: 8px 15px !important;
+      font-size: 12px !important;
+      border-bottom: 1px solid rgba(153, 187, 232, 0.3);
+      transition: all 0.15s ease !important;
+
+      &:hover {
+        background: #dfe8f6 !important;
+        color: #157fcc !important;
+      }
+
+      &.is-active {
+        background: #dfe8f6 !important;
+        color: #157fcc !important;
+        font-weight: bold !important;
+        border-left: 3px solid #157fcc;
+        box-shadow: inset 0 0 0 1px rgba(21, 127, 204, 0.1);
+      }
+
+      .el-icon,
+      [class*='ri-'] {
+        font-size: 14px !important;
+        margin-right: 6px;
+      }
+    }
+
+    // 子菜单
+    .el-sub-menu {
+      &__title {
+        &:hover {
+          background: #dfe8f6 !important;
+        }
+      }
+
+      .el-menu {
+        background: #e8f0f8 !important;
+
+        .el-menu-item {
+          padding-left: 30px !important;
+          background: transparent !important;
+
+          &:hover {
+            background: #dfe8f6 !important;
+          }
+
+          &.is-active {
+            background: #dfe8f6 !important;
+          }
+        }
+      }
+    }
+
+    // 横向菜单
+    &--horizontal {
+      border-right: none !important;
+      border-bottom: 1px solid #99bbe8 !important;
+
+      > .el-menu-item,
+      > .el-sub-menu > .el-sub-menu__title {
+        border-bottom: none !important;
+        border-right: 1px solid rgba(153, 187, 232, 0.3);
+
+        &:hover {
+          background: #dfe8f6 !important;
+        }
+
+        &.is-active {
+          border-left: none !important;
+          border-bottom: 3px solid #157fcc !important;
+        }
+      }
+    }
+  }
+
+  // 下拉选择（优化版）
+  .el-select {
+    font-size: 12px !important;
+
+    .el-input {
+      &__wrapper {
+        background: #ffffff !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
+        transition: all 0.2s ease !important;
+
+        &:hover:not(.is-disabled) {
+          border-color: #157fcc !important;
+        }
+
+        &.is-focus {
+          border-color: #157fcc !important;
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 4px rgba(21, 127, 204, 0.25) !important;
+        }
+      }
+
+      &__inner {
+        font-size: 12px !important;
+        line-height: 20px !important;
+      }
+
+      &__suffix {
+        .el-icon {
+          font-size: 12px !important;
+        }
+      }
+    }
+
+    &.is-disabled {
+      .el-input__wrapper {
+        background: #f5f5f5 !important;
+        border-color: #d0d0d0 !important;
+      }
+    }
+  }
+
+  // 下拉选择面板
+  .el-select-dropdown {
+    border: 1px solid #99bbe8 !important;
+    border-radius: 3px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    padding: 4px 0 !important;
+
+    &__item {
+      padding: 6px 12px !important;
+      font-size: 12px !important;
+      color: #222222 !important;
+      transition: background-color 0.15s ease !important;
+
+      &:hover {
+        background: #dfe8f6 !important;
+        color: #15428b !important;
+      }
+
+      &.is-selected {
+        background: #dfe8f6 !important;
+        color: #157fcc !important;
+        font-weight: bold !important;
+      }
+
+      &.is-disabled {
+        color: #cccccc !important;
+        cursor: not-allowed !important;
+
+        &:hover {
+          background: transparent !important;
+        }
+      }
+    }
+
+    &__empty {
+      padding: 10px 0 !important;
+      font-size: 12px !important;
+      color: #999999 !important;
+    }
+  }
+
+  // 下拉菜单
+  .el-dropdown-menu {
+    border: 1px solid var(--el-border-color) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    padding: 4px !important;
+
+    &__item {
+      padding: 6px 12px !important;
+      font-size: 12px !important;
+
+      &:hover {
+        background: var(--el-color-extjs-hover) !important;
+        color: var(--el-color-extjs-text) !important;
+      }
+    }
+  }
+
+  // 工具栏
+  .el-toolbar {
+    background: var(--el-color-extjs-toolbar) !important;
+    border: 1px solid var(--el-border-color) !important;
+    padding: 4px !important;
+    box-shadow: inset 0 1px 0 #ffffff;
+  }
+
+  // 面包屑
+  .el-breadcrumb {
+    font-size: 12px !important;
+
+    &__item {
+      .el-breadcrumb__inner {
+        color: var(--el-color-extjs-text) !important;
+
+        &:hover {
+          color: #157fcc !important;
+        }
+      }
+    }
+  }
+
+  // 标签
+  .el-tag {
+    border: 1px solid var(--el-border-color) !important;
+    background: var(--el-fill-color) !important;
+    padding: 2px 8px !important;
+    font-size: 11px !important;
+    border-radius: 3px !important;
+  }
+
+  // 开关
+  .el-switch {
+    &__core {
+      border: 1px solid var(--el-border-color) !important;
+      background: #e8f0f8 !important;
+    }
+  }
+
+  // 滑块
+  .el-slider {
+    &__runway {
+      background: #e8f0f8 !important;
+      border: 1px solid var(--el-border-color) !important;
+    }
+
+    &__bar {
+      background: #157fcc !important;
+    }
+
+    &__button {
+      border: 2px solid #157fcc !important;
+      background: #ffffff !important;
+    }
+  }
+
+  // 进度条
+  .el-progress {
+    &__bar {
+      background: #e8f0f8 !important;
+      border: 1px solid var(--el-border-color) !important;
+    }
+  }
+
+  // 树形控件
+  .el-tree {
+    background: #ffffff !important;
+    border: 1px solid var(--el-border-color) !important;
+    font-size: 12px !important;
+
+    &-node {
+      &:hover {
+        background: var(--el-color-extjs-hover) !important;
+      }
+
+      &.is-current {
+        background: var(--el-color-extjs-selected) !important;
+        color: var(--el-color-extjs-text) !important;
+        font-weight: bold !important;
+      }
+
+      &__content {
+        padding: 4px 8px !important;
+      }
+    }
+  }
+
+  // 表单
+  .el-form {
+    &-item {
+      margin-bottom: 12px !important;
+
+      &__label {
+        color: var(--el-color-extjs-text) !important;
+        font-weight: bold !important;
+        font-size: 12px !important;
+        padding: 0 8px 0 0 !important;
+      }
+    }
+  }
+
+  // 分割线
+  .el-divider {
+    border-color: var(--el-border-color) !important;
+  }
+
+  // 折叠面板
+  .el-collapse {
+    border: 1px solid var(--el-border-color) !important;
+
+    &-item {
+      &__header {
+        background: var(--el-color-extjs-toolbar) !important;
+        border-bottom: 1px solid var(--el-border-color) !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        font-weight: bold !important;
+        color: var(--el-color-extjs-text) !important;
+      }
+
+      &__content {
+        padding: 12px !important;
+        background: #ffffff !important;
+      }
+    }
+  }
+
+  // 时间选择器
+  .el-date-editor {
+    &.el-input__wrapper {
+      background: #ffffff !important;
+      border: 1px solid var(--el-border-color) !important;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // 上传组件
+  .el-upload {
+    border: 1px dashed var(--el-border-color) !important;
+    border-radius: 3px !important;
+
+    &:hover {
+      border-color: #157fcc !important;
+    }
+  }
+
+  // 步骤条
+  .el-steps {
+    &--horizontal {
+      .el-step {
+        &__head {
+          &.is-process {
+            color: #157fcc !important;
+            border-color: #157fcc !important;
+          }
+        }
+      }
+    }
+  }
+
+  // 徽章
+  .el-badge {
+    &__content {
+      background: #157fcc !important;
+      border: 1px solid #ffffff !important;
+      font-size: 11px !important;
+    }
+  }
+
+  // 加载
+  .el-loading-mask {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  // 通知
+  .el-notification {
+    border: 1px solid var(--el-border-color) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+
+    &__title {
+      color: var(--el-color-extjs-text) !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+    }
+  }
+
+  // SVG 图标颜色
+  [fill='#fff'] {
+    fill: var(--el-color-white) !important;
+  }
+
+  [fill='#f2f2f2'],
+  [fill='#d0d2d5'] {
+    fill: var(--el-bg-color) !important;
+  }
+
+  // 登录页面
+  .login-container,
+  .register-container {
+    background: #d0def0 !important;
+  }
+
+  // 全局按钮、开关等组件的白色变量覆盖
+  .el-button,
+  .el-switch,
+  .el-checkbox,
+  .el-checkbox-group,
+  .el-radio,
+  .el-radio-group,
+  .el-slider,
+  .el-tag,
+  .el-pagination,
+  .el-segmented,
+  .el-carousel,
+  .el-menu,
+  .el-card__body::after,
+  .el-alert.is-dark,
+  .el-badge,
+  .fold-unfold,
+  .schedule-box,
+  .vab-theme-setting div a:hover,
+  .transition-box,
+  .top-card-blue,
+  .icon-panel {
+    --el-color-white: #ffffff;
+  }
+
+  // 分割线文本背景
+  .el-divider__text {
+    background-color: #ffffff !important;
+  }
+
+  // 引用块
+  .vab-blockquote {
+    background-color: var(--el-fill-color) !important;
+    border-left: 3px solid #157fcc !important;
+  }
+
+  // 禁用状态的单选框
+  .el-radio__input.is-disabled.is-checked .el-radio__inner::after {
+    background-color: #cccccc;
+  }
+
+  // 滚动条样式 - Ext JS 风格
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #e8f0f8;
+    border: 1px solid #d0def0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #d0def0 0%, #b8d0e8 100%);
+    border: 1px solid #99bbe8;
+    border-radius: 2px;
+
+    &:hover {
+      background: linear-gradient(to bottom, #b8d0e8 0%, #99bbe8 100%);
+    }
+
+    &:active {
+      background: #99bbe8;
+    }
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #e8f0f8;
+  }
+}
