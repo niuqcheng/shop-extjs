@@ -1,13 +1,13 @@
 <div align="center">
 <img width="200" src="https://gcore.jsdelivr.net/gh/zxwk1998/image/logo/vite.svg" alt="VAB"/>
-<h1>shop-vite</h1>
+<h1>shop-extjs</h1>
 </div>
 
-## 🔈 关于 shop-vite
+## 🔈 关于 shop-extjs
 
-- shop-vite 接口及使用规范继承 admin plus，有过 admin-plus 开发经验的用户可快速上手。
-- shop-vite 发布时间较短，不代表最终品质，后续会持续进行更新，敬请期待。
-- shop-vite 对比 admin-plus 由于底层脚手架不同，故部分代码无法与 admin-plus 通用。
+- shop-extjs 接口及使用规范继承 admin plus，有过 admin-plus 开发经验的用户可快速上手。
+- shop-extjs 发布时间较短，不代表最终品质，后续会持续进行更新，敬请期待。
+- shop-extjs 对比 admin-plus 由于底层脚手架不同，故部分代码无法与 admin-plus 通用。
 
 ## 🔈 框架使用建议
 
@@ -35,14 +35,14 @@
 - 12.购买者需遵守以上约定，最终解释权归 vab 系列著作权人所有，如果您无法遵守以上约定，请勿下单。
 
 ```txt
-注：以上协议以 https://vuejs-core.cn/authorization/shop-vite.html 为准
+注：以上协议以 https://vuejs-core.cn/authorization/shop-extjs.html 为准
 ```
 
 ## 🔗 链接
 
-- 💻 常规版演示地址：[shop-vite](https://vuejs-core.cn/shop-vite/)
+- 💻 常规版演示地址：[shop-extjs](https://vuejs-core.cn/shop-extjs/)
 - 📝 使用文档：(文档地址及密码请查看 vip 群群公告第一条)
-- 📌 付费版及 vip 群购买地址：[购买地址](https://vuejs-core.cn/authorization/shop-vite.html)
+- 📌 付费版及 vip 群购买地址：[购买地址](https://vuejs-core.cn/authorization/shop-extjs.html)
 
 ## ✅ 版权须知
 
@@ -58,7 +58,7 @@ Vab 系列产品受国家计算机软件著作权保护（证书号：软著登�
 
 - 免费名额之外，额外加入 vip 群 （100/人 仅限已购买框架的的公司员工加入，购买后联系 微信 zxwk-bfq 即可）
 
-- [购买地址，网页右下角切换付款码即可](https://vuejs-core.cn/authorization/shop-vite.html)
+- [购买地址，网页右下角切换付款码即可](https://vuejs-core.cn/authorization/shop-extjs.html)
 
 ### 定制开发
 
