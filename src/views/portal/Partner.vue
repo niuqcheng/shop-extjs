@@ -45,7 +45,6 @@
       <vab-footer />
     </div>
     <el-backtop target="#app .scroll-wrap-partner" />
-    <vab-theme-setting />
   </el-scrollbar>
 </template>
 

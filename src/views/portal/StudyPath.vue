@@ -145,7 +145,6 @@
     </el-dialog>
 
     <el-backtop target="#app .scroll-wrap-study-path" />
-    <vab-theme-setting />
   </el-scrollbar>
 </template>
 

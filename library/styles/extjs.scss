@@ -174,7 +174,9 @@ html > body.vab-theme-extjs {
   .vab-tabs-content-card,
   .vab-tabs-content-smart,
   .vab-tabs-content-smooth {
-    .el-tabs__header {
+    background: #d0def0 !important;
+
+    :deep(.el-tabs__header) {
       background: #d0def0 !important;
       border-bottom: 1px solid #99bbe8 !important;
       padding: 2px 4px 0 4px !important;
@@ -184,6 +186,10 @@ html > body.vab-theme-extjs {
       .el-tabs__nav-wrap {
         padding: 0 !important;
         margin: 0 !important;
+
+        &.is-scrollable {
+          padding: 0 !important;
+        }
       }
 
       .el-tabs__nav-scroll {
@@ -194,31 +200,77 @@ html > body.vab-theme-extjs {
         border: none !important;
       }
 
+      // 左右滚动按钮显示 - 使用更高优先级
+      .el-tabs__nav-prev,
+      .el-tabs__nav-next {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: 28px !important;
+        line-height: 28px !important;
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        color: #15428b !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease !important;
+        font-size: 14px !important;
+
+        i {
+          color: #15428b !important;
+        }
+
+        &:hover:not(.is-disabled) {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          color: #157fcc !important;
+
+          i {
+            color: #157fcc !important;
+          }
+        }
+
+        &.is-disabled {
+          opacity: 0.5 !important;
+          cursor: not-allowed !important;
+          background: #f5f5f5 !important;
+          border-color: #d0d0d0 !important;
+
+          i {
+            color: #cccccc !important;
+          }
+        }
+      }
+
       .el-tabs__item {
+        position: relative !important;
         border: 1px solid #99bbe8 !important;
         border-bottom: none !important;
-        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        background: linear-gradient(to bottom, #f0f5fa 0%, #d0def0 100%) !important;
         border-radius: 3px 3px 0 0 !important;
         padding: 4px 12px !important;
-        margin: 0 2px 0 0 !important;
+        margin: 0 1px 0 0 !important;
         font-size: 12px !important;
         height: 28px !important;
         line-height: 20px !important;
         color: #15428b !important;
         transition: all 0.15s ease !important;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 
         &:hover {
-          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          background: linear-gradient(to bottom, #ffffff 0%, #e0ebf5 100%) !important;
           color: #157fcc !important;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
         }
 
         &.is-active {
-          background: #ffffff !important;
-          color: #157fcc !important;
+          background: linear-gradient(to bottom, #ffffff 0%, #fafcfe 100%) !important;
+          color: #15428b !important;
           font-weight: bold !important;
           border-bottom: 1px solid #ffffff !important;
           margin-bottom: -1px !important;
-          box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+          z-index: 10 !important;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 -1px 3px rgba(0, 0, 0, 0.08), 2px 0 3px rgba(0, 0, 0, 0.05), -2px 0 3px rgba(0, 0, 0, 0.05) !important;
         }
 
         .el-icon-close {
@@ -235,32 +287,192 @@ html > body.vab-theme-extjs {
   .vab-layout-horizontal {
     .vab-tabs {
       margin: 0 !important;
-      padding: 0 !important;
+      padding: 0 8px 0 0 !important;
       min-height: auto !important;
+      background: #d0def0 !important;
 
       .vab-tabs-draggable {
-        width: 100% !important;
+        width: calc(100% - 40px) !important;
       }
 
       .el-tabs {
         margin: 0 !important;
         padding: 0 !important;
       }
+
+      // 确保下拉菜单显示
+      .el-dropdown {
+        display: flex !important;
+        align-items: center !important;
+        height: 32px !important;
+        margin-left: 8px !important;
+      }
+
+      .vab-tabs-more {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: 28px !important;
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease !important;
+
+        &:hover,
+        &.vab-tabs-more-active {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          border-color: #157fcc !important;
+        }
+      }
     }
   }
 
   // 固定标签页样式
+  .vab-layout-header.fixed-header,
   .fixed-header {
     .vab-tabs {
       margin: 0 !important;
-      padding: 0 !important;
-      padding-right: 0 !important;
-      padding-left: 0 !important;
+      padding: 0 8px 0 0 !important;
       min-height: auto !important;
+      background: #d0def0 !important;
       border-bottom: 1px solid #99bbe8 !important;
 
       .vab-tabs-draggable {
-        width: 100% !important;
+        width: calc(100% - 40px) !important;
+
+        :deep(.el-tabs__header) {
+          background: #d0def0 !important;
+          border-bottom: 1px solid #99bbe8 !important;
+          padding: 2px 4px 0 4px !important;
+          margin: 0 !important;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+          .el-tabs__nav-wrap {
+            padding: 0 !important;
+            margin: 0 !important;
+
+            &.is-scrollable {
+              padding: 0 !important;
+            }
+          }
+
+          .el-tabs__nav-scroll {
+            padding: 0 !important;
+
+            .el-tabs__nav {
+              border: none !important;
+            }
+
+            // 左右滚动按钮
+            .el-tabs__nav-prev,
+            .el-tabs__nav-next {
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              width: 32px !important;
+              height: 28px !important;
+              line-height: 28px !important;
+              background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+              border: 1px solid #99bbe8 !important;
+              border-radius: 3px !important;
+              color: #15428b !important;
+              cursor: pointer !important;
+              transition: all 0.15s ease !important;
+              font-size: 14px !important;
+
+              i {
+                color: #15428b !important;
+              }
+
+              &:hover:not(.is-disabled) {
+                background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+                color: #157fcc !important;
+
+                i {
+                  color: #157fcc !important;
+                }
+              }
+
+              &.is-disabled {
+                opacity: 0.5 !important;
+                cursor: not-allowed !important;
+                background: #f5f5f5 !important;
+                border-color: #d0d0d0 !important;
+
+                i {
+                  color: #cccccc !important;
+                }
+              }
+            }
+
+            // Ext JS 卡片风格的标签项
+            .el-tabs__item {
+              position: relative !important;
+              border: 1px solid #99bbe8 !important;
+              border-bottom: none !important;
+              background: linear-gradient(to bottom, #f0f5fa 0%, #d0def0 100%) !important;
+              border-radius: 3px 3px 0 0 !important;
+              padding: 4px 12px !important;
+              margin: 0 1px 0 0 !important;
+              font-size: 12px !important;
+              height: 28px !important;
+              line-height: 20px !important;
+              color: #15428b !important;
+              transition: all 0.15s ease !important;
+              box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+
+              &:hover {
+                background: linear-gradient(to bottom, #ffffff 0%, #e0ebf5 100%) !important;
+                color: #157fcc !important;
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+              }
+
+              &.is-active {
+                background: linear-gradient(to bottom, #ffffff 0%, #fafcfe 100%) !important;
+                color: #15428b !important;
+                font-weight: bold !important;
+                border-bottom: 1px solid #ffffff !important;
+                margin-bottom: -1px !important;
+                z-index: 10 !important;
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 -1px 3px rgba(0, 0, 0, 0.08), 2px 0 3px rgba(0, 0, 0, 0.05), -2px 0 3px rgba(0, 0, 0, 0.05) !important;
+              }
+
+              .el-icon-close {
+                font-size: 12px !important;
+                margin-left: 4px !important;
+              }
+            }
+          }
+        }
+      }
+
+      // 确保下拉菜单显示
+      .el-dropdown {
+        display: flex !important;
+        align-items: center !important;
+        height: 32px !important;
+        margin-left: 8px !important;
+      }
+
+      .vab-tabs-more {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: 28px !important;
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease !important;
+
+        &:hover,
+        &.vab-tabs-more-active {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          border-color: #157fcc !important;
+        }
       }
     }
   }
@@ -791,23 +1003,199 @@ html > body.vab-theme-extjs {
     }
   }
 
-  // 标签页平滑风格
+  // 标签页平滑风格 - Ext JS 优化
   .vab-tabs-content-smooth {
-    .el-tabs__header {
-      background: var(--el-color-extjs-toolbar) !important;
+    :deep(.el-tabs__header) {
+      background: #d0def0 !important;
+      padding: 2px 4px 0 4px !important;
+      margin: 0 0 -7px 0 !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+      .el-tabs__nav {
+        margin-top: 3.5px !important;
+        border: none !important;
+      }
+
+      .el-tabs__nav-wrap {
+        padding: 0 !important;
+        margin: 0 !important;
+
+        &.is-scrollable {
+          padding: 0 !important;
+        }
+      }
+
+      // 左右滚动按钮
+      .el-tabs__nav-prev,
+      .el-tabs__nav-next {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: 28px !important;
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        color: #15428b !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease !important;
+
+        i {
+          color: #15428b !important;
+        }
+
+        &:hover:not(.is-disabled) {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          color: #157fcc !important;
+
+          i {
+            color: #157fcc !important;
+          }
+        }
+
+        &.is-disabled {
+          opacity: 0.5 !important;
+          cursor: not-allowed !important;
+          background: #f5f5f5 !important;
+          border-color: #d0d0d0 !important;
+        }
+      }
 
       .el-tabs__item {
+        height: calc(var(--el-tab-item-height) + 4px) !important;
+        margin-right: -18px !important;
         padding: 6px 16px !important;
+        font-size: 12px !important;
+        color: #15428b !important;
+        background: #d0def0 !important;
+        border: 1px solid #99bbe8 !important;
+        mask: url('/@/assets/tabs_images/vab-tab.png');
+        mask-size: 100% 100%;
+        transition: all 0.15s ease !important;
+
+        .vab-tabs-title {
+          flex: 1;
+          margin: 0 calc(var(--el-margin) / 2) 0 calc(var(--el-margin) / 2);
+        }
 
         &:hover {
-          color: var(--el-color-extjs-text);
-          background: var(--el-color-extjs-hover);
+          z-index: 999;
+          color: #157fcc !important;
+          background: #dfe8f6 !important;
+          mask: url('/@/assets/tabs_images/vab-tab.png');
+          mask-size: 100% 100%;
         }
 
         &.is-active {
+          z-index: 1000;
+          color: #157fcc !important;
           background: #ffffff !important;
-          color: var(--el-color-extjs-text) !important;
-          font-weight: bold;
+          font-weight: bold !important;
+          mask: url('/@/assets/tabs_images/vab-tab.png');
+          mask-size: 100% 100%;
+
+          &:hover {
+            color: #157fcc !important;
+            background: #ffffff !important;
+          }
+        }
+
+        .el-icon-close {
+          font-size: 12px !important;
+          margin-left: 4px !important;
+        }
+      }
+    }
+  }
+
+  // 标签页矩形风格 - Ext JS 优化
+  .vab-tabs-content-rect {
+    :deep(.el-tabs__header) {
+      height: var(--el-tabs-height) !important;
+      background: #d0def0 !important;
+      border-bottom: 1px solid #99bbe8 !important;
+      padding: 0 4px !important;
+      margin: -1px 0 0 0 !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+      .el-tabs__nav {
+        height: var(--el-tabs-height) !important;
+        border: none !important;
+      }
+
+      .el-tabs__nav-wrap {
+        padding: 0 !important;
+        margin: 0 !important;
+
+        &.is-scrollable {
+          padding: 0 !important;
+        }
+      }
+
+      // 左右滚动按钮
+      .el-tabs__nav-prev,
+      .el-tabs__nav-next {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: var(--el-tabs-height) !important;
+        line-height: var(--el-tabs-height) !important;
+        background: linear-gradient(to bottom, #ffffff 0%, #e8f0f8 100%) !important;
+        border: 1px solid #99bbe8 !important;
+        border-radius: 3px !important;
+        color: #15428b !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease !important;
+
+        i {
+          color: #15428b !important;
+        }
+
+        &:hover:not(.is-disabled) {
+          background: linear-gradient(to bottom, #ffffff 0%, #dfe8f6 100%) !important;
+          color: #157fcc !important;
+
+          i {
+            color: #157fcc !important;
+          }
+        }
+
+        &.is-disabled {
+          opacity: 0.5 !important;
+          cursor: not-allowed !important;
+          background: #f5f5f5 !important;
+          border-color: #d0d0d0 !important;
+        }
+      }
+
+      .el-tabs__item {
+        height: var(--el-tabs-height) !important;
+        line-height: var(--el-tabs-height) !important;
+        padding: 0 16px !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        color: #15428b !important;
+        background: transparent !important;
+        border: none !important;
+        border-right: 1px solid rgba(153, 187, 232, 0.3) !important;
+        border-radius: 0 !important;
+        transition: all 0.15s ease !important;
+
+        &:hover {
+          color: #157fcc !important;
+          background: #dfe8f6 !important;
+        }
+
+        &.is-active {
+          color: #157fcc !important;
+          background: #dfe8f6 !important;
+          font-weight: bold !important;
+        }
+
+        .el-icon-close {
+          font-size: 12px !important;
+          margin-left: 4px !important;
         }
       }
     }

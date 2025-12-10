@@ -48,7 +48,6 @@
         </el-row>
       </div>
     </div>
-    <vab-theme-setting />
   </div>
 </template>
 

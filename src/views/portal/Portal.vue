@@ -101,7 +101,6 @@
       <vab-footer />
     </div>
     <el-backtop target="#app .scroll-wrap-portal" />
-    <vab-theme-setting />
   </el-scrollbar>
 </template>
 

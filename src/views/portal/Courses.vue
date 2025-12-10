@@ -163,7 +163,6 @@
     </vab-dialog>
 
     <el-backtop target="#app .scroll-wrap-courses" />
-    <vab-theme-setting />
   </el-scrollbar>
 </template>
 

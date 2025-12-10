@@ -63,7 +63,6 @@
 
     <div class="hidden-sm-and-up"></div>
     <el-backtop target="#app .scroll-wrap-product" />
-    <vab-theme-setting />
   </el-scrollbar>
 </template>
 

@@ -13,6 +13,7 @@
     <vab-fullscreen v-show="theme.showFullScreen" />
     <vab-refresh v-show="theme.showRefresh" />
     <vab-avatar />
+    <vab-theme-setting />
   </div>
 </template>
 

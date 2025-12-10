@@ -4,7 +4,6 @@
       <component :is="layout" :collapse="collapse" :device="device" :fixed-header="theme.fixedHeader" :show-tabs="theme.showTabs" />
     </div>
     <vab-theme-drawer />
-    <vab-theme-setting />
     <vab-statistics />
     <el-backtop target="#app .scroll-wrap" />
   </el-scrollbar>
